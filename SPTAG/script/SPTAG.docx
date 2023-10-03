@@ -79,7 +79,9 @@ ResultNum=10
 MaxCheck=2048
 MaxDistRatio=8.0
 SearchPostingPageLimit=12
+================================RUN BUILD CONFIG===========================
 
+./ssdserving buildconfig.ini
 ===================================SERVICE CONFIG==========================
 
 [Service]

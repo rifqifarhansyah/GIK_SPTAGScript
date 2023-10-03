@@ -35,12 +35,11 @@ def measure(duration, num_clients):
         with open("latencies.txt", "a") as file:
             for latency in latencies:
                 file.write(f"{latency:.6f}\n")
-                
+        print(f"Len latencies array per-client: {len(latencies)}")
         return latencies  # Return latencies list for average calculation
 
     with ThreadPoolExecutor(max_workers=num_clients) as executor:
         latency_lists = list(executor.map(make_request, range(num_clients)))
-        print(latency_lists)
         print(f"panjang latency_lists: {len(latency_lists)}")
 
     total_latencies = [latency for latency_list in latency_lists for latency in latency_list]
